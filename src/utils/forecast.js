@@ -16,7 +16,7 @@ const forecast = (longitude, latitude, unit, callback) =>{
             const feelslike =  weather_data.current.feelslike
             const weather_descriptions = weather_data.current.weather_descriptions
             const precipitation = weather_data.current.precip
-            const weather_report = "It's "+weather_descriptions+ " with temperature of "+temperature+" degrees and feels like "+feelslike + " degrees"+"\n"+
+            const weather_report = "It's "+weather_descriptions+ " with temperature of "+temperature+" degrees and feels like "+feelslike + " degrees."+"\n"+
                                     "There's "+((parseFloat(precipitation) * 100) /10)+ "% chance of precipitation"
             callback(undefined, weather_report)
         }
