@@ -11,10 +11,13 @@ const forecast = (longitude, latitude, unit, callback) =>{
             callback('Unable to find location. Try with a valid coordinate!', undefined)
         }else{ 
             const weather_data =  body
+            console.log(weather_data)
             const temperature = weather_data.current.temperature
             const feelslike =  weather_data.current.feelslike
             const weather_descriptions = weather_data.current.weather_descriptions
-            const weather_report = "It's "+weather_descriptions+ " with temperature of "+temperature+" degrees and feels like "+feelslike + " degrees"
+            const precipitation = weather_data.current.precip
+            const weather_report = "It's "+weather_descriptions+ " with temperature of "+temperature+" degrees and feels like "+feelslike + " degrees"+"\n"+
+                                    "There's "+((parseFloat(precipitation) * 100) /10)+ "% chance of precipitation"
             callback(undefined, weather_report)
         }
 
