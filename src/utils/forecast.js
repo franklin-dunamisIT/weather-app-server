@@ -11,7 +11,6 @@ const forecast = (longitude, latitude, unit, callback) =>{
             callback('Unable to find location. Try with a valid coordinate!', undefined)
         }else{ 
             const weather_data =  body
-            console.log(weather_data)
             const temperature = weather_data.current.temperature
             const feelslike =  weather_data.current.feelslike
             const weather_descriptions = weather_data.current.weather_descriptions
